@@ -86,7 +86,7 @@ function render(){
   $('dateLabel').textContent=t(d.name[0]+' / November '+d.date,d.name[1]+' ／ 11 月 '+d.date+' 日');
   $('dayTitle').textContent=d.title[lang]; $('intro').textContent=d.intro[lang];
   $('stops').replaceChildren(...d.stops.map(renderStop));
-  $('dayPhoto').src='img/'+d.photo+'.jpg';$('dayPhoto').alt=d.caption[lang];$('caption').textContent=d.caption[lang];
+  $('dayPhoto').src=d.photo+'.jpg';$('dayPhoto').alt=d.caption[lang];$('caption').textContent=d.caption[lang];
   $('noteHeading').replaceChildren(icon('walk'),document.createTextNode(t('Getting around','交通小提示')));$('note').textContent=d.tip[lang];
   $('linksHeading').textContent=t('Visitor information','實用資訊');
   $('official').replaceChildren(...references[active].map(r=>{ const a=external(r[lang],r[2]);a.append(el('span','','↗'));return a; }));
